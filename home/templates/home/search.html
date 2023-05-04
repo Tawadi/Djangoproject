@@ -1,0 +1,37 @@
+
+{% extends "base.html" %} {% load static %} {% block start %}
+<form class="d-flex" role="search" action="/search" method="get">
+  <input
+    class="form-control me-2"
+    type="search"
+    placeholder="Search for medicines and health care products..."
+    aria-label="Search"
+    name="query"
+    id="search-box"
+  />
+  <button class="btn btn-success" type="submit" id="button">search</button>
+</form>
+<br />
+<br />
+<h4>Search results for "{{query}}"</h4>
+
+{% for medicine in allmedicines %}
+<div class="col-md-8" id="product-card">
+  <div class="card shadow-lg" style="width: 19rem">
+    <h2>{{ medicines.medicine_name }}</h2>
+    {% if medicine.images %}
+    <img src="{{ medicine.images.url }}" alt="{{medicine.medicine_name}}" />
+    {% endif %}
+    <div class="card-body">
+      <p>Price = {{medicine.price}}</p>
+      <a href="{% url 'add_cart' medicine.uid %}" class="btn btn-success"
+        >Cart <i class="fa-solid fa-cart-shopping"></i></a
+      >"
+      <a href="#" class="btn btn-primary">20% discount</a>
+    </div>
+
+    <br />
+  </div>
+  <br />
+</div>
+{% endfor %} {% endblock %}

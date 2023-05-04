@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block start%}
+<div class="container"> 
+
+
+  <form  action='/search' method="get" class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search for medicines and health care products..." aria-label="Search" name='search' id='search'>
+    <button class="btn btn-success" type="submit" id=button>search</button>
+  </form>
+</div>
+<br>
+<div class="container">
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2500">
+      <img src="/static/img/offer1.jpg" class="d-block w-100" alt="offer1">
+    </div>
+    <div class="carousel-item" data-bs-interval="2500">
+      <img src="/static/img/offer2.jpeg" class="d-block w-100" alt="medicine">
+    </div>
+    <div class="carousel-item" data-bs-interval="2500">
+      <img src="/static/img/offer3.png" class="d-block w-100" alt="offer2">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div><br>
+<div>
+<h1>PharmFast: India's Leading Online Pharmacy & Healthcare Platform</h1>
+</div> 
+<div class="container mt-5">
+
+      {% comment %} {{Medicines}} {% endcomment %}
+    <div class="row" >
+    
+      
+     {% for medicine in Medicines %}
+      <div class="col-md-3">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="/media/{{medicine.images}}" style="height : 220px"  class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{medicine.medicine_name}}</h5>
+            <p>Price ={{medicine.price}} | category {{medicine.category.category_name}}</p>
+            <a href="{% url 'add_cart' medicine.uid %}" class="btn btn-success">Cart <i class="fa-solid fa-cart-shopping"></i></a>"
+            <a href="#" class="btn btn-primary">20% discount</a>
+            {% comment %} href="{% url 'add_cart' medicines_uid %}" {% endcomment %}
+            <br>
+            <br>
+            <br>
+      
+
+          </div>
+        </div>
+        <br>
+        <br>
+      </div>
+      <br>
+      <br>
+      <br>
+      
+       {% endfor %}
+</div> 
+
+
+
+{% endblock %}
+
+            
+
+<!--
+<div style="width: 500px; height: 200px; border: 1px solid black; display: flex; justify-content: center; align-items: center;">
+    <form>
+      <input type="text" placeholder="Search..." style="padding: 8px; font-size: 16px; border: 1px solid gray; border-radius: 4px;">
+    </form>
+  </div>
+  https://i0.wp.com/indiancashback.com/blog/wp-content/uploads/2016/04/online-medicines-healthcare-cashback-discount-coupons-1.jpg?fit=1200%2C660&ssl=1
+
+  https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/08/09/857238-onlinepharmacy.jpg
+
+  previous img
+  http://www.sunshinehospitals.com/online-pharmacy/img/bann4.png
+
+  http://www.sunshinehospitals.com/online-pharmacy/img/bann1.jpg
+
+  https://s.yimg.com/uu/api/res/1.2/0lyj38GHszYmz3hdGmyTPQ--~B/aD0yNTA7dz03MjA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en-US/simply_wall_st__316/6db74ed094dfda6520e04665d497cb3f
+
+
+   resize: both;
+  width: 900px;
+  height: 50px;

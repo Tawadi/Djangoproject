@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block start%}
+<div class="about-section">
+    <h1>About Us</h1>
+    <p>Welcome to our online pharmacy!</p>
+    <p>We pride ourselves on providing friendly and efficient service to our customers, and we are always happy to help in any way we can.
+  
+      Thank you for choosing our online pharmacy for your healthcare needs. We look forward to serving you!</p>
+  </div>
+  
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        {% comment %} <img src="/w3images/team1.jpg"  style="width:100%"> {% endcomment %}
+        <div class="container">
+          <h2>Ms.Ammara</h2>
+          <p class="title">CEO & Founder</p>
+          <p>Specialist in Medicines</p>
+          <p>ammara123@gmail.com</p>
+          <h4>Contact:  XXXXXXXXXX</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        {% comment %} <img src="/static/img/img.jpg" style="width:250px" > {% endcomment %}
+        <div class="container">
+          <h2>Mr.Tawadi</h2>
+          <p class="title">Marketing Manager</p>
+          <p>Pharmacist</p>
+          <p>tawadi100@gmail.com</p>
+          <h4>Contact:  XXXXXXXXXX</h4>    
+          </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        {% comment %} <img src="/w3images/team3.jpg" style="width:100%"> {% endcomment %}
+        <div class="container">
+          <h2>Mr.Arqaum</h2>
+          <p class="title">HR Manager</p>
+          <p>PHD</p>
+          <p>arqu90@gmail.com</p>
+          <h4>Contact:  XXXXXXXXXX</h4>
+            </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
